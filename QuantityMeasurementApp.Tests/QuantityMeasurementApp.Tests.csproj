@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MSTest.TestAdapter"   Version="3.3.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.3.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuantityMeasurementAppEntity\QuantityMeasurementAppEntity.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementAppBusiness\QuantityMeasurementAppBusiness.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementAppRepository\QuantityMeasurementAppRepository.csproj" />
+    <ProjectReference Include="..\QuantityMeasurementApp.Controller\QuantityMeasurementApp.Controller.csproj" />
+  </ItemGroup>
+
+</Project>
