@@ -42,3 +42,14 @@ E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEnt
 E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\refint\QuantityMeasurementAppEntity.dll
 E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.pdb
 E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\ref\QuantityMeasurementAppEntity.dll
+E:\copied\UC18\QuantityMeasurementAppEntity\bin\Debug\net10.0\QuantityMeasurementAppEntity.deps.json
+E:\copied\UC18\QuantityMeasurementAppEntity\bin\Debug\net10.0\QuantityMeasurementAppEntity.dll
+E:\copied\UC18\QuantityMeasurementAppEntity\bin\Debug\net10.0\QuantityMeasurementAppEntity.pdb
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.GeneratedMSBuildEditorConfig.editorconfig
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.AssemblyInfoInputs.cache
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.AssemblyInfo.cs
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.csproj.CoreCompileInputs.cache
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.dll
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\refint\QuantityMeasurementAppEntity.dll
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\QuantityMeasurementAppEntity.pdb
+E:\copied\UC18\QuantityMeasurementAppEntity\obj\Debug\net10.0\ref\QuantityMeasurementAppEntity.dll
