@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QjCRwTfVUAY=",
+  "dgSpecHash": "8HZgizsfacQ=",
   "success": true,
-  "projectFilePath": "E:\\UC17\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
+  "projectFilePath": "E:\\copied\\UC18\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using QuantityMeasurementAppEntity.Entity;
 using QuantityMeasurementAppRepository.Data;
 using QuantityMeasurementAppRepository.Exceptions;
@@ -12,10 +13,14 @@ namespace QuantityMeasurementAppRepository.Repository;
 public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
 {
     private readonly QuantityMeasurementDbContext _db;
+    private readonly ILogger<QuantityMeasurementEfRepository> _logger;
 
-    public QuantityMeasurementEfRepository(QuantityMeasurementDbContext db)
+    public QuantityMeasurementEfRepository(
+        QuantityMeasurementDbContext db,
+        ILogger<QuantityMeasurementEfRepository> logger)
     {
-        _db = db ?? throw new ArgumentNullException(nameof(db));
+        _db     = db     ?? throw new ArgumentNullException(nameof(db));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public void Save(QuantityEntity entity)
@@ -25,16 +30,25 @@ public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
 
         try
         {
+            _logger.LogInformation(
+                "[EfRepository] Saving {OperationType} record id={OperationId} to DB...",
+                entity.OperationType, entity.OperationId);
+
             var existing = _db.QuantityMeasurements.Find(entity.OperationId);
             if (existing != null)
                 _db.Entry(existing).CurrentValues.SetValues(entity);
             else
                 _db.QuantityMeasurements.Add(entity);
 
-            _db.SaveChanges();
+            int rows = _db.SaveChanges();
+
+            _logger.LogInformation(
+                "[EfRepository] SaveChanges() committed {Rows} row(s). DB={Database}",
+                rows, _db.Database.GetDbConnection().Database);
         }
         catch (Exception ex) when (ex is not ArgumentNullException)
         {
+            _logger.LogError(ex, "[EfRepository] Save FAILED: {Message}", ex.Message);
             throw new DatabaseException("Save failed: " + ex.Message, ex);
         }
     }

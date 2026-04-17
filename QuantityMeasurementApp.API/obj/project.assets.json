@@ -3610,6 +3610,7 @@
     "net10.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 10.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.4",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.4",
       "QuantityMeasurementAppBusiness >= 1.0.0",
       "QuantityMeasurementAppEntity >= 1.0.0",
       "QuantityMeasurementAppRepository >= 1.0.0",
@@ -3623,11 +3624,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UC17\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
+      "projectUniqueName": "E:\\copied\\UC18\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
       "projectName": "QuantityMeasurementApp.API",
-      "projectPath": "E:\\UC17\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
+      "projectPath": "E:\\copied\\UC18\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\UC17\\QuantityMeasurementApp.API\\obj\\",
+      "outputPath": "E:\\copied\\UC18\\QuantityMeasurementApp.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3649,14 +3650,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj"
+            "E:\\copied\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
+              "projectPath": "E:\\copied\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj"
             },
-            "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
+            "E:\\copied\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
+              "projectPath": "E:\\copied\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
             },
-            "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
+            "E:\\copied\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
+              "projectPath": "E:\\copied\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
             }
           }
         }
@@ -3684,6 +3685,10 @@
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
+            "target": "Package",
+            "version": "[10.0.4, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[10.0.4, )"
           },

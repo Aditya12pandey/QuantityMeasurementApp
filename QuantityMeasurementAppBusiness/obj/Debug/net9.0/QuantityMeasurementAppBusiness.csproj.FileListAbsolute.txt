@@ -1,0 +1,17 @@
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppBusiness.deps.json
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppBusiness.dll
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppBusiness.pdb
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppEntity.dll
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppRepository.dll
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppEntity.pdb
+E:\UC18\QuantityMeasurementAppBusiness\bin\Debug\net9.0\QuantityMeasurementAppRepository.pdb
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.csproj.AssemblyReference.cache
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.GeneratedMSBuildEditorConfig.editorconfig
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.AssemblyInfoInputs.cache
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.AssemblyInfo.cs
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.csproj.CoreCompileInputs.cache
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\Quantity.36EEC7CD.Up2Date
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.dll
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\refint\QuantityMeasurementAppBusiness.dll
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\QuantityMeasurementAppBusiness.pdb
+E:\UC18\QuantityMeasurementAppBusiness\obj\Debug\net9.0\ref\QuantityMeasurementAppBusiness.dll

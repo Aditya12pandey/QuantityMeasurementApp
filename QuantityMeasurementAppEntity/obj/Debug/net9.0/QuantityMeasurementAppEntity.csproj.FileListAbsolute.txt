@@ -1,0 +1,11 @@
+E:\UC18\QuantityMeasurementAppEntity\bin\Debug\net9.0\QuantityMeasurementAppEntity.deps.json
+E:\UC18\QuantityMeasurementAppEntity\bin\Debug\net9.0\QuantityMeasurementAppEntity.dll
+E:\UC18\QuantityMeasurementAppEntity\bin\Debug\net9.0\QuantityMeasurementAppEntity.pdb
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.GeneratedMSBuildEditorConfig.editorconfig
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.AssemblyInfoInputs.cache
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.AssemblyInfo.cs
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.csproj.CoreCompileInputs.cache
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.dll
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\refint\QuantityMeasurementAppEntity.dll
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\QuantityMeasurementAppEntity.pdb
+E:\UC18\QuantityMeasurementAppEntity\obj\Debug\net9.0\ref\QuantityMeasurementAppEntity.dll

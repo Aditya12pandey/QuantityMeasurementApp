@@ -10,6 +10,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.0",
           "Microsoft.EntityFrameworkCore.Design": "10.0.4",
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.4",
           "QuantityMeasurementAppBusiness": "1.0.0",
           "QuantityMeasurementAppEntity": "1.0.0",
           "QuantityMeasurementAppRepository": "1.0.0",
