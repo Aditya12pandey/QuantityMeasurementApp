@@ -10,8 +10,6 @@ services:
         fromDatabase:
           name: quantity-db
           property: connectionString
-    buildCommand: ""
-    startCommand: ""
     rootDir: UC18
 
   # 2. The Angular Frontend
@@ -19,7 +17,7 @@ services:
     name: quantity-measurement-ui
     runtime: static
     buildCommand: npm install && npm run build
-    publishPath: UC20/FRONTEND/dist/quantity-measurement-ui/browser
+    publishPath: dist/quantity-measurement-ui/browser
     rootDir: UC20/FRONTEND
     routes:
       - type: rewrite
@@ -29,3 +27,4 @@ services:
 databases:
   - name: quantity-db
     plan: free
+    region: oregon
