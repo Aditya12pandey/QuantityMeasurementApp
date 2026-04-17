@@ -6,11 +6,4 @@ services:
       - key: ASPNETCORE_ENVIRONMENT
         value: Production
       - key: ConnectionStrings__DefaultConnection
-        fromDatabase:
-          name: quantity-db
-          property: connectionString
-
-databases:
-  - name: quantity-db
-    plan: free
-    region: oregon
+        value: "Host=dpg-d7h1t19kh4rs73ah2180-a;Database=quantitydb_bdpo;Username=quantitydb_bdpo_user;Password=mGaimLaqiEnuZ4s4m60Lm2rgfk2a7VfT;Port=5432;SslMode=Require;Trust Server Certificate=true;"
