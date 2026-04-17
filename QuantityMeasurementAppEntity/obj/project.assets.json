@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
+      "projectUniqueName": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
       "projectName": "QuantityMeasurementAppEntity",
-      "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
+      "projectPath": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\UC17\\QuantityMeasurementAppEntity\\obj\\",
+      "outputPath": "E:\\UC18\\QuantityMeasurementAppEntity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

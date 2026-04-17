@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {}
+    "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {}
   },
   "projects": {
-    "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
+    "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj",
+        "projectUniqueName": "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj",
         "projectName": "QuantityMeasurementAppBusiness",
-        "projectPath": "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj",
+        "projectPath": "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\UC17\\QuantityMeasurementAppBusiness\\obj\\",
+        "outputPath": "E:\\UC18\\QuantityMeasurementAppBusiness\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
-                "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
+              "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
+                "projectPath": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
               },
-              "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
-                "projectPath": "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
+              "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
+                "projectPath": "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
               }
             }
           }
@@ -365,14 +365,14 @@
         }
       }
     },
-    "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
+    "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
+        "projectUniqueName": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
         "projectName": "QuantityMeasurementAppEntity",
-        "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
+        "projectPath": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\UC17\\QuantityMeasurementAppEntity\\obj\\",
+        "outputPath": "E:\\UC18\\QuantityMeasurementAppEntity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -705,14 +705,14 @@
         }
       }
     },
-    "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
+    "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj",
+        "projectUniqueName": "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj",
         "projectName": "QuantityMeasurementAppRepository",
-        "projectPath": "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj",
+        "projectPath": "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "E:\\UC17\\QuantityMeasurementAppRepository\\obj\\",
+        "outputPath": "E:\\UC18\\QuantityMeasurementAppRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -734,8 +734,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
-                "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
+              "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
+                "projectPath": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
               }
             }
           }

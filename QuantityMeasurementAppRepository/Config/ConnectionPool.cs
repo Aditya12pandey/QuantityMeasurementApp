@@ -7,11 +7,11 @@ namespace QuantityMeasurementAppRepository.Config
     public sealed class ConnectionPool : IDisposable
     {
         private readonly string _connectionString;
-        private readonly int    _maxSize;
+        private readonly int _maxSize;
         private readonly Stack<SqlConnection> _available
             = new Stack<SqlConnection>();
-        private int  _totalCreated = 0;
-        private bool _disposed     = false;
+        private int _totalCreated = 0;
+        private bool _disposed = false;
         private readonly object _lock = new object();
 
         private static ConnectionPool _instance;
@@ -25,7 +25,7 @@ namespace QuantityMeasurementAppRepository.Config
                 {
                     if (_instance == null || _instance._disposed)
                     {
-                        var cfg   = ApplicationConfig.Instance;
+                        var cfg = ApplicationConfig.Instance;
                         _instance = new ConnectionPool(
                             cfg.ConnectionString, cfg.PoolSize);
                     }
@@ -37,7 +37,7 @@ namespace QuantityMeasurementAppRepository.Config
         public ConnectionPool(string connectionString, int maxSize = 5)
         {
             _connectionString = connectionString;
-            _maxSize          = maxSize;
+            _maxSize = maxSize;
             WarmUp();
         }
 

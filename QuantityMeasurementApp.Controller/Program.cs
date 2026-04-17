@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using QuantityMeasurementAppBusiness;
 using QuantityMeasurementAppRepository.Config;
 using QuantityMeasurementAppRepository.Data;
+using Microsoft.Extensions.Logging;
 using QuantityMeasurementAppRepository.Interfaces;
 using QuantityMeasurementAppRepository.Repository;
 
@@ -34,14 +35,19 @@ namespace QuantityMeasurementApp.Controller
             config.PrintConfig();
 
             if (config.RepositoryType.Equals("database",
-                    StringComparison.OrdinalIgnoreCase))
+        StringComparison.OrdinalIgnoreCase))
             {
                 var options = new DbContextOptionsBuilder<QuantityMeasurementDbContext>()
                     .UseSqlServer(config.ConnectionString)
                     .Options;
 
                 using var dbContext = new QuantityMeasurementDbContext(options);
-                var repository = new QuantityMeasurementEfRepository(dbContext);
+
+                using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+                var logger = loggerFactory.CreateLogger<QuantityMeasurementEfRepository>();
+
+                var repository = new QuantityMeasurementEfRepository(dbContext, logger);
+
                 RunWithRepository(config, repository);
             }
             else

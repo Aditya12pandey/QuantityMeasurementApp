@@ -2186,11 +2186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\UC17\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
+      "projectUniqueName": "E:\\UC18\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
       "projectName": "QuantityMeasurementApp.Controller",
-      "projectPath": "E:\\UC17\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
+      "projectPath": "E:\\UC18\\QuantityMeasurementApp.Controller\\QuantityMeasurementApp.Controller.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "E:\\UC17\\QuantityMeasurementApp.Controller\\obj\\",
+      "outputPath": "E:\\UC18\\QuantityMeasurementApp.Controller\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2212,14 +2212,14 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj"
+            "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj": {
+              "projectPath": "E:\\UC18\\QuantityMeasurementAppBusiness\\QuantityMeasurementAppBusiness.csproj"
             },
-            "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
+            "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj": {
+              "projectPath": "E:\\UC18\\QuantityMeasurementAppEntity\\QuantityMeasurementAppEntity.csproj"
             },
-            "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
-              "projectPath": "E:\\UC17\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
+            "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj": {
+              "projectPath": "E:\\UC18\\QuantityMeasurementAppRepository\\QuantityMeasurementAppRepository.csproj"
             }
           }
         }

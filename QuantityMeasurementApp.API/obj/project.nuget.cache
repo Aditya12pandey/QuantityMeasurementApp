@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GNCp9ySjY1k=",
+  "dgSpecHash": "xG2D0ULjfto=",
   "success": true,
-  "projectFilePath": "E:\\UC17\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
+  "projectFilePath": "E:\\UC18\\QuantityMeasurementApp.API\\QuantityMeasurementApp.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
