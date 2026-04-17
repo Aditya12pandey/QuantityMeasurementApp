@@ -66,7 +66,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<QuantityMeasurementDbContext>(options =>
 {
-    options.UseSqlServer(connectionString);
+    options.UseNpgsql(connectionString);
     options.EnableSensitiveDataLogging();   // UC19: log SQL with param values
     options.LogTo(Console.WriteLine,        // UC19: print EF SQL to console
         Microsoft.Extensions.Logging.LogLevel.Information);
