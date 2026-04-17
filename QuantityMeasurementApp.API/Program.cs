@@ -61,8 +61,9 @@ builder.Services.AddSwaggerGen(options =>
 // ─────────────────────────────────────────────────────────────
 //  3. Database
 // ─────────────────────────────────────────────────────────────
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
-    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING") 
+                       ?? builder.Configuration.GetConnectionString("DefaultConnection")
+                       ?? throw new InvalidOperationException("Connection string not found in Environment (DB_CONNECTION_STRING) or appsettings.json.");
 
 builder.Services.AddDbContext<QuantityMeasurementDbContext>(options =>
 {
