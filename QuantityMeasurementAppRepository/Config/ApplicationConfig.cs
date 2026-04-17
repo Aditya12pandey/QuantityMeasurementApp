@@ -36,11 +36,7 @@ namespace QuantityMeasurementAppRepository.Config
 
         private void LoadDefaults()
         {
-            _properties["db.url"] =
-                "Server=(localdb)\\MSSQLLocalDB;" +
-                "Database=QuantityMeasurementDB;" +
-                "Trusted_Connection=True;" +
-                "TrustServerCertificate=True;";
+            _properties["db.url"] = "";
             _properties["db.pool.size"]    = "5";
             _properties["repository.type"] = "database";
             _properties["db.schema.auto"]  = "false";
