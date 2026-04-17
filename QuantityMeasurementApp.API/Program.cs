@@ -11,7 +11,18 @@ using QuantityMeasurementAppRepository.Data;
 using QuantityMeasurementAppRepository.Interfaces;
 using QuantityMeasurementAppRepository.Repository;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    Args = args,
+    ContentRootPath = Directory.GetCurrentDirectory()
+});
+
+// Disable reloadOnChange to prevent inotify limit issues on Render
+builder.Configuration.Sources.Clear();
+builder.Configuration
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: false)
+    .AddEnvironmentVariables();
 
 // ─────────────────────────────────────────────────────────────
 //  1. Controllers
