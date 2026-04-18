@@ -159,10 +159,9 @@ using (var scope = app.Services.CreateScope())
     logger.LogWarning("=== DB CONNECTION: Server={Server} | Database={Database} ===",
         conn.DataSource, conn.Database);
 
-    // UC20: Force clean DB for PostgreSQL (Wipe and Recreate)
-    db.Database.EnsureDeleted();
+    // UC20: Ensure database and tables are created (PostgreSQL)
     db.Database.EnsureCreated();
-    logger.LogWarning("=== DATABASE RESET COMPLETE. Tables ready. ===");
+    logger.LogWarning("=== DATABASE READY. Tables verified. ===");
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();

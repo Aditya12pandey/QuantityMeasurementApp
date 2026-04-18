@@ -22,7 +22,7 @@ namespace QuantityMeasurementAppBusiness
 
         // ── Compare ───────────────────────────────────────────────────────
 
-        public bool Compare(QuantityDTO dto1, QuantityDTO dto2)
+        public bool Compare(string userId, QuantityDTO dto1, QuantityDTO dto2)
         {
             try
             {
@@ -37,31 +37,37 @@ namespace QuantityMeasurementAppBusiness
                 double base2 = m2.ConvertToBaseUnit(dto2.Value);
                 bool result  = Math.Abs(base1 - base2) < 0.0001;
 
-                _repository.Save(new QuantityEntity(
-                    "COMPARE", dto1, dto2, result.ToString(), null, null));
+                var entity = new QuantityEntity("COMPARE", dto1, dto2, result.ToString(), null, null);
+                entity.UserId = userId;
+                _repository.Save(entity);
 
                 return result;
             }
             catch (QuantityMeasurementException)
             {
-                try { _repository.Save(new QuantityEntity(
-                    "COMPARE", dto1, dto2, "Comparison failed", true)); }
+                try { 
+                    var entity = new QuantityEntity("COMPARE", dto1, dto2, "Comparison failed", true);
+                    entity.UserId = userId;
+                    _repository.Save(entity); 
+                }
                 catch { }
                 throw;
             }
             catch (Exception ex)
             {
-                try { _repository.Save(new QuantityEntity(
-                    "COMPARE", dto1, dto2, ex.Message, true)); }
+                try { 
+                    var entity = new QuantityEntity("COMPARE", dto1, dto2, ex.Message, true);
+                    entity.UserId = userId;
+                    _repository.Save(entity); 
+                }
                 catch { }
-                throw new QuantityMeasurementException(
-                    "Comparison failed: " + ex.Message, ex);
+                throw new QuantityMeasurementException("Comparison failed: " + ex.Message, ex);
             }
         }
 
         // ── Convert ───────────────────────────────────────────────────────
 
-        public QuantityDTO Convert(QuantityDTO quantity, QuantityDTO targetUnitDto)
+        public QuantityDTO Convert(string userId, QuantityDTO quantity, QuantityDTO targetUnitDto)
         {
             try
             {
@@ -80,7 +86,9 @@ namespace QuantityMeasurementAppBusiness
                     resultValue, target.GetUnitName(),
                     target.GetMeasurementType());
 
-                _repository.Save(new QuantityEntity("CONVERT", quantity, result));
+                var entity = new QuantityEntity("CONVERT", quantity, result);
+                entity.UserId = userId;
+                _repository.Save(entity);
                 return result;
             }
             catch (QuantityMeasurementException) { throw; }
@@ -93,7 +101,7 @@ namespace QuantityMeasurementAppBusiness
 
         // ── Add ───────────────────────────────────────────────────────────
 
-        public QuantityDTO Add(QuantityDTO dto1, QuantityDTO dto2,
+        public QuantityDTO Add(string userId, QuantityDTO dto1, QuantityDTO dto2,
                                QuantityDTO targetUnitDto)
         {
             try
@@ -118,11 +126,9 @@ namespace QuantityMeasurementAppBusiness
                     resultValue, target.GetUnitName(),
                     target.GetMeasurementType());
 
-                _repository.Save(new QuantityEntity(
-                    "ADD", dto1, dto2,
-                    resultValue.ToString("F2"),
-                    target.GetUnitName(),
-                    target.GetMeasurementType()));
+                var entity = new QuantityEntity("ADD", dto1, dto2, resultValue.ToString("F2"), target.GetUnitName(), target.GetMeasurementType());
+                entity.UserId = userId;
+                _repository.Save(entity);
 
                 return result;
             }
@@ -137,7 +143,7 @@ namespace QuantityMeasurementAppBusiness
 
         // ── Subtract ──────────────────────────────────────────────────────
 
-        public QuantityDTO Subtract(QuantityDTO dto1, QuantityDTO dto2,
+        public QuantityDTO Subtract(string userId, QuantityDTO dto1, QuantityDTO dto2,
                                     QuantityDTO targetUnitDto)
         {
             try
@@ -162,11 +168,9 @@ namespace QuantityMeasurementAppBusiness
                     resultValue, target.GetUnitName(),
                     target.GetMeasurementType());
 
-                _repository.Save(new QuantityEntity(
-                    "SUBTRACT", dto1, dto2,
-                    resultValue.ToString("F2"),
-                    target.GetUnitName(),
-                    target.GetMeasurementType()));
+                var entity = new QuantityEntity("SUBTRACT", dto1, dto2, resultValue.ToString("F2"), target.GetUnitName(), target.GetMeasurementType());
+                entity.UserId = userId;
+                _repository.Save(entity);
 
                 return result;
             }
@@ -181,7 +185,7 @@ namespace QuantityMeasurementAppBusiness
 
         // ── Divide ────────────────────────────────────────────────────────
 
-        public double Divide(QuantityDTO dto1, QuantityDTO dto2)
+        public double Divide(string userId, QuantityDTO dto1, QuantityDTO dto2)
         {
             try
             {
@@ -201,9 +205,9 @@ namespace QuantityMeasurementAppBusiness
 
                 double result = m1.ConvertToBaseUnit(dto1.Value) / base2;
 
-                _repository.Save(new QuantityEntity(
-                    "DIVIDE", dto1, dto2,
-                    result.ToString("F6"), null, null));
+                var entity = new QuantityEntity("DIVIDE", dto1, dto2, result.ToString("F6"), null, null);
+                entity.UserId = userId;
+                _repository.Save(entity);
 
                 return result;
             }

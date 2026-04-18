@@ -65,6 +65,11 @@ public class QuantityEntity
     [Column("timestamp")]
     public DateTime Timestamp { get; set; }
 
+    [Required]
+    [Column("user_id")]
+    [MaxLength(64)]
+    public string UserId { get; set; }
+
     public QuantityEntity() { }
 
     public QuantityEntity(string operationType,

@@ -5,6 +5,7 @@ using QuantityMeasurementAppEntity.DTOs;
 using QuantityMeasurementAppEntity.Mappings;
 using QuantityMeasurementAppRepository.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace QuantityMeasurementApp.API.Controllers;
 
@@ -28,7 +29,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(CompareResultDto), StatusCodes.Status200OK)]
     public ActionResult<CompareResultDto> Compare([FromBody] TwoQuantityRequest request)
     {
-        bool equal = _service.Compare(request.First, request.Second);
+        bool equal = _service.Compare(GetUserId(), request.First, request.Second);
         return Ok(new CompareResultDto { Equal = equal });
     }
 
@@ -36,7 +37,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(QuantityDTO), StatusCodes.Status200OK)]
     public ActionResult<QuantityDTO> Convert([FromBody] ConvertRequest request)
     {
-        QuantityDTO result = _service.Convert(request.Quantity, request.TargetUnit);
+        QuantityDTO result = _service.Convert(GetUserId(), request.Quantity, request.TargetUnit);
         return Ok(result);
     }
 
@@ -44,7 +45,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(QuantityDTO), StatusCodes.Status200OK)]
     public ActionResult<QuantityDTO> Add([FromBody] AddSubtractRequest request)
     {
-        QuantityDTO result = _service.Add(request.First, request.Second, request.TargetUnit);
+        QuantityDTO result = _service.Add(GetUserId(), request.First, request.Second, request.TargetUnit);
         return Ok(result);
     }
 
@@ -52,7 +53,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(QuantityDTO), StatusCodes.Status200OK)]
     public ActionResult<QuantityDTO> Subtract([FromBody] AddSubtractRequest request)
     {
-        QuantityDTO result = _service.Subtract(request.First, request.Second, request.TargetUnit);
+        QuantityDTO result = _service.Subtract(GetUserId(), request.First, request.Second, request.TargetUnit);
         return Ok(result);
     }
 
@@ -60,7 +61,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(DivideResultDto), StatusCodes.Status200OK)]
     public ActionResult<DivideResultDto> Divide([FromBody] TwoQuantityRequest request)
     {
-        double value = _service.Divide(request.First, request.Second);
+        double value = _service.Divide(GetUserId(), request.First, request.Second);
         return Ok(new DivideResultDto { Value = value });
     }
 
@@ -68,7 +69,7 @@ public class QuantitiesController : ControllerBase
     [ProducesResponseType(typeof(IReadOnlyList<QuantityMeasurementRecordDto>), StatusCodes.Status200OK)]
     public ActionResult<IReadOnlyList<QuantityMeasurementRecordDto>> GetHistory()
     {
-        return Ok(_repository.GetAllMeasurements().ToRecordDtoList());
+        return Ok(_repository.GetAllMeasurements(GetUserId()).ToRecordDtoList());
     }
 
     [HttpGet("history/operation/{operationType}")]
@@ -76,7 +77,7 @@ public class QuantitiesController : ControllerBase
     public ActionResult<IReadOnlyList<QuantityMeasurementRecordDto>> GetHistoryByOperation(
         [FromRoute] string operationType)
     {
-        return Ok(_repository.GetByOperationType(operationType).ToRecordDtoList());
+        return Ok(_repository.GetByOperationType(GetUserId(), operationType).ToRecordDtoList());
     }
 
     [HttpGet("history/measurement/{measurementType}")]
@@ -84,13 +85,20 @@ public class QuantitiesController : ControllerBase
     public ActionResult<IReadOnlyList<QuantityMeasurementRecordDto>> GetHistoryByMeasurement(
         [FromRoute] string measurementType)
     {
-        return Ok(_repository.GetByMeasurementType(measurementType).ToRecordDtoList());
+        return Ok(_repository.GetByMeasurementType(GetUserId(), measurementType).ToRecordDtoList());
     }
 
     [HttpGet("count")]
     [ProducesResponseType(typeof(MeasurementCountDto), StatusCodes.Status200OK)]
     public ActionResult<MeasurementCountDto> Count()
     {
-        return Ok(new MeasurementCountDto { Count = _repository.GetCount() });
+        return Ok(new MeasurementCountDto { Count = _repository.GetCount(GetUserId()) });
+    }
+
+    private string GetUserId()
+    {
+        // Extract UserId from JWT NameIdentifier claim
+        return User.FindFirst(ClaimTypes.NameIdentifier)?.Value 
+               ?? throw new UnauthorizedAccessException("User not identified.");
     }
 }

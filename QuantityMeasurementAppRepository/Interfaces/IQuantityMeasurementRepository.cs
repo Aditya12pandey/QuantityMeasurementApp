@@ -8,13 +8,13 @@ namespace QuantityMeasurementAppRepository.Interfaces
         void Save(QuantityEntity entity);
 
         List<QuantityEntity> GetAll();
-        List<QuantityEntity> GetAllMeasurements();
-        List<QuantityEntity> GetByOperationType(string operationType);
-        List<QuantityEntity> GetByMeasurementType(string measurementType);
+        List<QuantityEntity> GetAllMeasurements(string userId);
+        List<QuantityEntity> GetByOperationType(string userId, string operationType);
+        List<QuantityEntity> GetByMeasurementType(string userId, string measurementType);
 
         QuantityEntity? GetById(string operationId);
 
-        int  GetCount();
+        int  GetCount(string userId);
         void Clear();
 
         // Default implementations — overridden by DB repository

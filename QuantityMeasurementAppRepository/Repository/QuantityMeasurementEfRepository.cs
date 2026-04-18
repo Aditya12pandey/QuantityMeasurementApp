@@ -68,7 +68,21 @@ public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
         }
     }
 
-    public List<QuantityEntity> GetAllMeasurements() => GetAll();
+    public List<QuantityEntity> GetAllMeasurements(string userId)
+    {
+        try
+        {
+            return _db.QuantityMeasurements
+                .AsNoTracking()
+                .Where(x => x.UserId == userId)
+                .OrderBy(x => x.Timestamp)
+                .ToList();
+        }
+        catch (Exception ex)
+        {
+            throw new DatabaseException("Query failed: " + ex.Message, ex);
+        }
+    }
 
     public QuantityEntity? GetById(string operationId)
     {
@@ -84,13 +98,13 @@ public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
         }
     }
 
-    public List<QuantityEntity> GetByOperationType(string operationType)
+    public List<QuantityEntity> GetByOperationType(string userId, string operationType)
     {
         try
         {
             return _db.QuantityMeasurements
                 .AsNoTracking()
-                .Where(x => x.OperationType == operationType)
+                .Where(x => x.UserId == userId && x.OperationType == operationType)
                 .OrderBy(x => x.Timestamp)
                 .ToList();
         }
@@ -101,13 +115,13 @@ public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
         }
     }
 
-    public List<QuantityEntity> GetByMeasurementType(string measurementType)
+    public List<QuantityEntity> GetByMeasurementType(string userId, string measurementType)
     {
         try
         {
             return _db.QuantityMeasurements
                 .AsNoTracking()
-                .Where(x => x.Operand1Measurement == measurementType)
+                .Where(x => x.UserId == userId && x.Operand1Measurement == measurementType)
                 .OrderBy(x => x.Timestamp)
                 .ToList();
         }
@@ -118,11 +132,11 @@ public class QuantityMeasurementEfRepository : IQuantityMeasurementRepository
         }
     }
 
-    public int GetCount()
+    public int GetCount(string userId)
     {
         try
         {
-            return _db.QuantityMeasurements.Count();
+            return _db.QuantityMeasurements.Count(x => x.UserId == userId);
         }
         catch (Exception ex)
         {
