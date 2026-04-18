@@ -159,9 +159,10 @@ using (var scope = app.Services.CreateScope())
     logger.LogWarning("=== DB CONNECTION: Server={Server} | Database={Database} ===",
         conn.DataSource, conn.Database);
 
-    // UC20: Ensure database and tables are created (PostgreSQL)
+    // UC20: Force clean DB for PostgreSQL (Wipe to add new user_id column)
+    db.Database.EnsureDeleted();
     db.Database.EnsureCreated();
-    logger.LogWarning("=== DATABASE READY. Tables verified. ===");
+    logger.LogWarning("=== DATABASE RESET COMPLETE. Tables ready with user_id. ===");
 }
 
 app.UseMiddleware<ExceptionHandlingMiddleware>();
