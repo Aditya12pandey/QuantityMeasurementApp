@@ -137,14 +137,7 @@ builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins(
-                "http://127.0.0.1:5500",
-                "http://localhost:4200", 
-                "http://localhost:5500",
-                "http://localhost:5500",
-                "https://127.0.0.1:5500",
-                "https://localhost:5500"
-              )
+        policy.AllowAnyOrigin() // UC20: Allow any origin for testing, or add your specific Render URL below
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -166,6 +159,8 @@ using (var scope = app.Services.CreateScope())
     logger.LogWarning("=== DB CONNECTION: Server={Server} | Database={Database} ===",
         conn.DataSource, conn.Database);
 
+    // UC20: Ensure database and tables are created (PostgreSQL)
+    db.Database.EnsureCreated();
     db.Database.Migrate();
     logger.LogWarning("=== MIGRATION COMPLETE. Tables ready. ===");
 }
