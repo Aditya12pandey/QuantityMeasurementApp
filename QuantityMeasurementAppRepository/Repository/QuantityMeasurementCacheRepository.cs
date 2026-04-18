@@ -52,9 +52,16 @@ namespace QuantityMeasurementAppRepository.Repository
             lock (_lock) { return new List<QuantityEntity>(_cache); }
         }
 
-        public List<QuantityEntity> GetAllMeasurements()
+        public List<QuantityEntity> GetAllMeasurements(string userId)
         {
-            return GetAll();
+            lock (_lock)
+            {
+                var result = new List<QuantityEntity>();
+                for (int i = 0; i < _cache.Count; i++)
+                    if (_cache[i].UserId == userId)
+                        result.Add(_cache[i]);
+                return result;
+            }
         }
 
         public QuantityEntity? GetById(string operationId)
@@ -68,21 +75,28 @@ namespace QuantityMeasurementAppRepository.Repository
             }
         }
 
-        public List<QuantityEntity> GetByOperationType(string operationType)
+        public List<QuantityEntity> GetByOperationType(string userId, string operationType)
         {
             lock (_lock)
             {
                 var result = new List<QuantityEntity>();
                 for (int i = 0; i < _cache.Count; i++)
-                    if (_cache[i].OperationType == operationType)
+                    if (_cache[i].UserId == userId && _cache[i].OperationType == operationType)
                         result.Add(_cache[i]);
                 return result;
             }
         }
 
-        public int GetCount()
+        public int GetCount(string userId)
         {
-            lock (_lock) { return _cache.Count; }
+            lock (_lock)
+            {
+                int count = 0;
+                for (int i = 0; i < _cache.Count; i++)
+                    if (_cache[i].UserId == userId)
+                        count++;
+                return count;
+            }
         }
 
         public void Clear()
@@ -123,13 +137,13 @@ namespace QuantityMeasurementAppRepository.Repository
                 Console.Error.WriteLine($"[Repository] Could not load: {ex.Message}");
             }
         }
-        public List<QuantityEntity> GetByMeasurementType(string measurementType)
+        public List<QuantityEntity> GetByMeasurementType(string userId, string measurementType)
         {
             lock (_lock)
             {
                 var result = new List<QuantityEntity>();
                 for (int i = 0; i < _cache.Count; i++)
-                    if (_cache[i].Operand1Measurement == measurementType)
+                    if (_cache[i].UserId == userId && _cache[i].Operand1Measurement == measurementType)
                         result.Add(_cache[i]);
                 return result;
             }
